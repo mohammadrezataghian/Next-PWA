@@ -6,6 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import BasicMenu from "./_components/Menu";
 
 const Head = () => {
+  
   return (
     <>
       <header className="w-full h-auto sticky top-0">

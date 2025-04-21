@@ -5,12 +5,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-const Footer: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter signup logic here
-    console.log('Newsletter form submitted');
-  };
+const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-gray-100 pt-12 pb-6">
