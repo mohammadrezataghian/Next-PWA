@@ -4,6 +4,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Link from 'next/link';
 
 const Footer = () => {
 
@@ -31,28 +32,83 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="space-y-2">
             <h3 className="text-xl font-bold tracking-wide mb-4">لینک سریع</h3>
-            {['خانه', 'درباره ی ما', 'خدمات', 'محصولات', 'ارتباط با ما'].map((item) => (
-              <div key={item} className="flex items-center group">
+            
+            <div className="flex items-center group">
                 
-                <a href="#" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
-                  {item}
-                </a>
+                <Link href="/" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                خانه
+                </Link>
                 <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            ))}
+            <div className="flex items-center group">
+                
+                <Link href="/pages/aboutUs" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                درباره ی ما
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                
+                <Link href="/pages/services" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                خدمات
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                
+                <Link href="/pages/products" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                محصولات
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                
+                <Link href="/pages/contactUs" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                ارتباط با ما
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
           </div>
 
           {/* Resources */}
           <div className="space-y-2">
             <h3 className="text-xl font-bold tracking-wide mb-4">منابع</h3>
-            {['بلاگ', 'خبرنامه', 'حریم شخصی', 'شرایط خدمات', 'سوالات متداول', 'پشتیبانی'].map((item) => (
-              <div key={item} className="flex items-center group">
-                <a href="#" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
-                  {item}
-                </a>
+            <div className="flex items-center group">
+                <Link href="/pages/blog" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                بلاگ
+                </Link>
                 <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            ))}
+            <div className="flex items-center group">
+                <Link href="/pages/news" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                خبرنامه
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                <Link href="/pages/privacy" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                حریم شخصی
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                <Link href="/pages/termsOfService" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                شرایط خدمات
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                <Link href="/pages/faq" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                سوالات متداول
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            <div className="flex items-center group">
+                <Link href="/pages/support" className="text-sm py-1 hover:text-blue-400 transition-colors duration-300">
+                پشتیبانی
+                </Link>
+                <ChevronLeftIcon className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
           </div>
         </div>
 

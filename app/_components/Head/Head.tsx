@@ -15,10 +15,10 @@ const Head = () => {
             <BasicMenu />
           </div>
           <div className="md:block hidden">
-            <Link href="#">Login / SignUp</Link>
+            <Link href="/pages/login">Login / SignUp</Link>
           </div>
           <div className="">
-            <Link href="#" className="flex gap-1 items-center">
+            <Link href="/pages/search" className="flex gap-1 items-center">
               <span>
                 <SearchIcon className="text-sm" />
               </span>
@@ -26,7 +26,7 @@ const Head = () => {
             </Link>
           </div>
           <div className="border rounded-[50%] p-2">
-            <Link href="#">
+            <Link href="/">
               <Image src={Logo} alt="logo" className="w-10 h-10" />
             </Link>
           </div>
