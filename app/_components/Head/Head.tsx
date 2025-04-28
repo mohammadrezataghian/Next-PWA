@@ -9,7 +9,7 @@ const Head = () => {
   
   return (
     <>
-      <header className="w-full h-auto sticky top-0 z-50">
+      <header className="w-full h-auto sticky top-0 z-[9999]">
         <nav className="w-full h-auto p-3 bg-white boxShadowHead flex justify-between items-center">
           <div className="md:hidden block">
             <BasicMenu />
