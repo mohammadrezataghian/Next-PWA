@@ -107,7 +107,6 @@ const page = (props: DemoProps) => {
 
   return (
     <>
-    <div className='w-full h-auto !overflow-hidden'>
     <AppProvider
       navigation={NAVIGATION}
       router={router}
@@ -140,7 +139,6 @@ const page = (props: DemoProps) => {
         <DemoPageContent pathname={router.pathname} />
       </DashboardLayout>
     </AppProvider>
-    </div>
     </>
   )
 }
