@@ -1,44 +1,54 @@
 "use client"
 
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material/styles';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import DescriptionIcon from '@mui/icons-material/Description';
-import LayersIcon from '@mui/icons-material/Layers';
 import { AppProvider, type Navigation } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { useDemoRouter } from '@toolpad/core/internal';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { PageContainer } from '@toolpad/core/PageContainer';
+import { Grid } from '@mui/material';
+import Dashboard from './_components/Dashboard';
+import MakeRequest from './_components/makeRequest';
+import SavedRequests from './_components/SavedRequests';
+import SeeRequests from './_components/SeeRequests';
+import Logo from "@/public/icons/icon-192x192.png";
 
 const NAVIGATION: Navigation = [
+  // {
+  //   kind: 'header',
+  //   title: 'Main items',
+  // },
   {
-    kind: 'header',
-    title: 'Main items',
-  },
-  {
-    segment: 'dashboard',
-    title: 'Dashboard',
+    segment: 'Profile',
+    title: 'اطلاعات حساب',
     icon: <DashboardIcon />,
   },
   {
-    segment: 'orders',
-    title: 'Orders',
-    icon: <ShoppingCartIcon />,
+    segment: 'makeRequest',
+    title: 'ایجاد درخواست',
+    icon: <NoteAddIcon />,
+  },
+  // {
+  //   kind: 'divider',
+  // },
+  // {
+  //   kind: 'header',
+  //   title: 'Analytics',
+  // },
+  {
+    segment: 'savedRequests',
+    title: 'درخواست های ذخیره شده',
+    icon: <BookmarkAddIcon />,
   },
   {
-    kind: 'divider',
-  },
-  {
-    kind: 'header',
-    title: 'Analytics',
-  },
-  {
-    segment: 'integrations',
-    title: 'Integrations',
-    icon: <LayersIcon />,
+    segment: 'seeRequests',
+    title: 'مشاهده درخواست های ایجاد شده',
+    icon: <VisibilityIcon />,
   },
 ];
 
@@ -57,22 +67,6 @@ const demoTheme = createTheme({
     },
   },
 });
-
-function DemoPageContent({ pathname }: { pathname: string }) {
-  return (
-    <Box
-      sx={{
-        py: 4,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-      }}
-    >
-      <Typography>Dashboard content for {pathname}</Typography>
-    </Box>
-  );
-}
 
 interface DemoProps {
   /**
@@ -112,7 +106,7 @@ const page = (props: DemoProps) => {
       router={router}
       theme={demoTheme}
       window={demoWindow}
-      // branding={{title: 'حساب کاربری', logo: <img className='ml-2' src={Logo} alt="تعاونی مصرف کارکنان بانک ملی" />}}
+      branding={{title: 'حساب کاربری', logo: <img className='ml-2' src={Logo.src} alt="پروژه وب اپ تقیان" />}}
     >
       <DashboardLayout
       slots={{
@@ -136,7 +130,38 @@ const page = (props: DemoProps) => {
         },
       }}
       >
-        <DemoPageContent pathname={router.pathname} />
+        {router.pathname === '/' && (
+        <PageContainer>
+          <Grid container spacing={1} className='font-bold text-lg'>
+             hi reza  
+          </Grid>
+        </PageContainer>
+      )}
+
+      {router.pathname === '/Profile' && ( 
+      <PageContainer>
+        <Dashboard/>
+      </PageContainer>
+)}
+
+      {router.pathname === '/makeRequest' && (
+        <PageContainer>
+          <MakeRequest/>
+        </PageContainer>
+      )}
+
+      {router.pathname === '/savedRequests' && (
+        <PageContainer>
+          <SavedRequests/>
+        </PageContainer>
+      )}
+
+      {router.pathname === '/seeRequests' && (
+        <PageContainer>
+          <SeeRequests/>
+        </PageContainer>
+      )}
+    
       </DashboardLayout>
     </AppProvider>
     </>
