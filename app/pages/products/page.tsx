@@ -1,9 +1,19 @@
-import React from 'react'
+'use client';
 
-const page = () => {
+import useGetItems from '@/app/hooks/products/useGetItems';
+import React from 'react';
+
+const Page = () => {
+  const { items, loading, error } = useGetItems();
+
+console.log(items);
+
+
   return (
-    <div>this is products ...</div>
-  )
-}
+    <div>
+      <h2>This is products ...</h2>
+    </div>
+  );
+};
 
-export default page
+export default Page;
